@@ -1,0 +1,29 @@
+---
+title: "Parallel analysis"
+format: html
+---
+
+Aims
+
+:   1.  Discuss briefly the widely applied parallel analysis.
+    2.  Show the bias-variance decomposition using the delta method for estimating the number of factors in two cases:
+        -   Using the unadjusted original parallel analysis
+
+        -   Using the adjusted parallel analysis
+
+Central point is that the common factor model
+
+$$
+\Sigma = \Lambda\Psi\Lambda^T +\Omega
+$$
+
+implies that $\Sigma-\Omega$ is a rank $q$ matrix, where $q$ is the number of factors. This implies, that $\Sigma$ must have exactly $q$ non-zero eigenvalues $\lambda$. This causes a bias in the original Parallel Analysis because the asymptotic criteria function of
+
+$$
+c_{pa}\begin{cases}
+\lambda \ge 1,& \text{keep} \\
+\lambda < 1, & \text{do not keep}
+\end{cases}
+$$
+
+as $n\to\infty$. This is because we do not adjust for the presence of eigenvalues of $\Omega$ which cannot all be orthogonal to eigenvalues of the factors contained in $\Lambda\Psi\Lambda^t$.
